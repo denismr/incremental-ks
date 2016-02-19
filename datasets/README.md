@@ -21,7 +21,7 @@ We expect concept drift since a person may type a password faster once they get 
 - **Insects \[1\]** contains features from a laser sensor. The task is to identify the specimen of flying insect that is passing through the laser in a controlled environment,
 among 5 possibilities.
 Preliminary analysis showed that there is no drift in the feature space, however the prior distribution of the classes changes gradually over time. There are 5325 instances;
--- **Abrupt Insects** is a modified version of the Insects dataset.
+- **Abrupt Insects** is a modified version of the Insects dataset.
 We shuffled the data to eliminate prior distribution changes.
 After, we split the stream into $3$ segments. In the middle one, we shuffled all the features to introduce abrupt drift in the feature space, without inserting additional artifacts in the data.
 
