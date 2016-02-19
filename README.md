@@ -1,16 +1,15 @@
-# Incremental Kolmogorov Smirnov
+# Fast Unsupervised Online Drift Detection - Supplementary Material
 
-Implementations for the Incremental Kolmogorov Smirnov algorithm.
-As a side-effect, this repository also provides implementations for Treap with Lazy Propagation.
+This repository contains supplementary material for the paper.
 
-## Current Supported Languages
+## Current Contents
 
-- [X] Lua (although the code is pure-Lua, Luajit is required to achieve reasonable performance)
-- [ ] C++
-- [ ] Java
+- Datasets that were used in the experiments
+- Incremental Kolmogorov-Smirnov implementation
+  - Treap with lazy propagation implementation
 
 ## TO DO List:
 
-- insert reference to the paper here;
-- code examples for sliding window;
-- code the algorithm in other languages.
+- insert reference to the paper here
+- insert new plots and additional experimental results
+- upload code for all reported experiments
