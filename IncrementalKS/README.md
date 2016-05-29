@@ -6,7 +6,7 @@ As a side-effect, this repository also provides implementations for Treap with L
 ## Current Supported Languages
 
 - [X] **Lua** (although the code is pure-Lua, Luajit is required to achieve reasonable performance)
-- [ ] **C++**
+- [X] **C++**
 - [ ] **Java**
 
 ## TO DO List:
