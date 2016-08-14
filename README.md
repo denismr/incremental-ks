@@ -2,7 +2,7 @@
 
 This repository contains supplementary material for the paper.
 
-Paper information and download: https://github.com/denismr/incremental-ks.git .
+Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-unsupervised-online-drift-detection-using-incremental-kolmogorov-smirn .
 
 ## Current Contents
 
