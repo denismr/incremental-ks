@@ -4,7 +4,7 @@ This folder contains the datasets that were used in our experimental evaluation.
 All files are in the following format: each line is an instance with comma-separated features, where the last one is the class value.
 A short description of each of each dataset follows.
 
-- **Arabic \[3\]** contains audio features of $88$ people pronouncing Arabic digits between 0 and 9. 44 are females and 44 are males.
+- **Arabic \[3\]** contains audio features of 88 people pronouncing Arabic digits between 0 and 9. 44 are females and 44 are males.
 The task is to predict which digit was pronounced. The dataset was originally i.i.d. To artificially introduce drift, we separated the data stream in 4 parts of equal size.
 These parts alternate between male and female voices. The stream has 8800 instances.
 The original version of the dataset can be obtained through this [link](https://archive.ics.uci.edu/ml/datasets/Spoken+Arabic+Digit);
