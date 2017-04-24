@@ -161,6 +161,16 @@ local function Height(node)
   end
 end
 
+local function ToArray(node, array)
+  array = array or {}
+  if not node then return array end
+  Unlazy(node)
+  ToArray(node.left, array)
+  table.insert(array, node)
+  ToArray(node.right, array)
+  return array
+end
+
 return {
   CreateNode = CreateNode,
   Height = Height,
@@ -171,4 +181,5 @@ return {
   SplitGreatest = SplitGreatest,
   Update = Update,
   SumAll = SumAll,
+  ToArray = ToArray,
 }

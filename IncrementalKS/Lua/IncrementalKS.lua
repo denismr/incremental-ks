@@ -31,16 +31,58 @@ local Treap = require 'Treap'
 local idx = {}
 local mt = {__index = idx}
 
-function idx:Test()
+function idx:KS()
   assert(self.n[1] == self.n[2])
   local n = self.n[1]
-  if n == 0 then return false end
-
-  local supremum = math.max(self.treap.max_value, -self.treap.min_value) / n
-  return supremum > 1.36 * math.sqrt(2 * n / n ^ 2)
+  if n == 0 then return 0 end
+  return math.max(self.treap.max_value, -self.treap.min_value) / n
 end
 
+function idx:Kuiper()
+  assert(self.n[1] == self.n[2])
+  local n = self.n[1]
+  if n == 0 then return 0 end
+  return (self.treap.max_value - self.treap.min_value) / n
+end
+
+idx.V           = idx.KS
+idx.Statistic   = idx.KS
+idx.Stat        = idx.KS
+idx.D           = idx.KS
+idx.KSStat      = idx.KS
+idx.KSStatistic = idx.KS
+
+function idx:Test(ca)
+  -- ca = ca or 1.22 -- alpha = 0.10
+  -- ca = ca or 1.36 -- alpha = 0.05
+  -- ca = ca or 1.48 -- alpha = 0.025
+  -- ca = ca or 1.63 -- alpha = 0.01
+  -- ca = ca or 1.73 -- alpha = 0.005
+  ca = ca or 1.95 -- alpha = 0.001
+  local n = self.n[1]
+  return self:KS() > ca * math.sqrt(2 * n / n ^ 2), supremum
+end
+
+local meta_key = {
+  __lt = function(a, b)
+    if a[1] == b[1] then
+      return a[2] < b[2]
+    end
+    return a[1] < b[1]
+  end,
+  __le = function(a, b)
+    if a[1] == b[1] then
+      return a[2] <= b[2]
+    end
+    return a[1] < b[1]
+  end,
+  __eq = function(a, b)
+    return a[1] == b[1] and a[2] == b[2]
+  end,
+}
+
 function idx:AddElement(key, group)
+  local key = setmetatable({key, group}, meta_key)
   self.n[group] = self.n[group] + 1
 
   local left, left_g, right, val
@@ -59,6 +101,7 @@ function idx:AddElement(key, group)
 end
 
 function idx:RemoveElement(key, group)
+  local key = setmetatable({key, group}, meta_key)
   self.n[group] = self.n[group] - 1
   local left, right, right_l
 
@@ -73,6 +116,9 @@ function idx:RemoveElement(key, group)
 
   self.treap = Treap.Merge(left, right)
 end
+
+idx.Add = idx.AddElement
+idx.Remove = idx.RemoveElement
 
 return function()
   return setmetatable({

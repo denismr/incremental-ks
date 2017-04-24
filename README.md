@@ -4,6 +4,13 @@ This repository contains supplementary material for the paper.
 
 Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-unsupervised-online-drift-detection-using-incremental-kolmogorov-smirn .
 
+*Important note:* IKS runs on the assumption that all the observations are unique. If it is not the case, the computed D statistic may not be exact (it can be higher than it should).
+
+## Important changes
+
+- Added support to Kuiper's Test
+- Fixed a bug where using non-unique observations could permanently damage the IKS
+
 ## Current Contents
 
 - Datasets that were used in the experiments

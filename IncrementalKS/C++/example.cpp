@@ -1,5 +1,6 @@
 #include "IKS.h"
 #include <iostream>
+#include <chrono>
 
 typedef Treap<double, double> TreapDD;
 
@@ -18,7 +19,7 @@ int main() {
     std::cin >> a >> b;
     iks.AddObservation(a, SampleA);
     iks.AddObservation(b, SampleB);
-    std::cout << iks.PValue() << std::endl;
+    std::cout << iks.KS() << std::endl;
   }
   
   std::cout << "\nRemoving\n\n";
@@ -27,7 +28,7 @@ int main() {
     std:: cin >> a >> b;
     iks.RemoveObservation(a, SampleA);
     iks.RemoveObservation(b, SampleB);
-    std::cout << iks.PValue() << std::endl;
+    std::cout << iks.KS() << std::endl;
   }
   
   return 0;

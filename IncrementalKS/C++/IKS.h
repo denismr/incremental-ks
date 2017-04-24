@@ -2,16 +2,17 @@
 #define IKS_H
 
 #include <random>
+#include <utility>
 #include "Treap.h"
 
 enum SampleID { SampleA, SampleB };
-typedef Treap<double, double> TreapDD;
+typedef Treap<std::pair<double, double>, double> TreapPDDD;
 
 template<class URNG>
 class IncrementalKS {
   private:
   
-  TreapDD* treap;
+  TreapPDDD* treap;
   int count_a;
   int count_b;
   std::uniform_int_distribution<> distribution;
@@ -21,7 +22,8 @@ class IncrementalKS {
   
   IncrementalKS(URNG* generator); // does not keep ownership of URNG
 
-  double PValue();
+  double KS();
+  double Kuiper();
   
   // ca defines the significance level.
   // ca = 1.22 => alpha = 0.10
