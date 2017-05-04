@@ -12,6 +12,8 @@ Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-un
 | ---------------------- | ----- | ----- | ----- | ----- |
 | Accuracy               | 52.00 | 60.12 | 58.83 | 59.78 |
 | % Required True Labels |  5.68 | 28.41 |  5.68 | 100.0 |
+| # Model Replacements   |     0 |     4 |     0 | 8300  |
+| # AB Adaptations       |     0 |     0 |     7 | 0     |
 
 
 ## Important changes
