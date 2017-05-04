@@ -5,7 +5,7 @@ All files are in the following format: each line is an instance with comma-separ
 A short description of each of each dataset follows.
 
 - **Arabic \[3\]** contains audio features of 88 people pronouncing Arabic digits between 0 and 9. 44 are females and 44 are males.
-The task is to predict which digit was pronounced. The dataset was originally i.i.d. To artificially introduce drift, we separated the data stream in 4 parts of equal size.
+The task is to predict which digit was pronounced. The dataset was originally i.i.d. and contained time series for 13 different attributes. In this verions of the dataset, we have 26 attributes instead of 13 time series: we replaced each time series with its mean and standard deviation. To artificially introduce drift, we separated the data stream in 4 parts of equal size.
 These parts alternate between male and female voices. The stream has 8800 instances.
 The original version of the dataset can be obtained through this [link](https://archive.ics.uci.edu/ml/datasets/Spoken+Arabic+Digit);
 - **Posture \[4\]** contains data from a sensor that is carried by 5 different people. The task is to predict which movement is performed, among 11 possibilities.
