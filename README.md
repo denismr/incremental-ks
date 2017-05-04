@@ -7,11 +7,10 @@ Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-un
 *Important note:* IKS runs on the assumption that all the observations are unique. If it is not the case, the computed D statistic may not be exact (it can be higher than it should).
 
 *Important note 2:* the version of Arabic that was used in the paper was utterly broken. This repository contains the fixed version. The corrects results are the following:
-|                      Arabic Dataset                    |
-| ------------------------------------------------------ |
+
 | Measurament            | BL1   | MR    | AB    | TL    |
 | ---------------------- | ----- | ----- | ----- | ----- |
-| Arabic                 | 52.00 | 60.12 | 58.83 | 59.78 |
+| Accuracy               | 52.00 | 60.12 | 58.83 | 59.78 |
 | % Required True Labels |  5.68 | 28.41 |  5.68 | 100.0 |
 
 
