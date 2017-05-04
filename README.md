@@ -11,11 +11,9 @@ Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-un
 | Measurament            | BL1   | MR    | AB    | TL    |
 | ---------------------- | ----- | ----- | ----- | ----- |
 | Accuracy               | 61.77 | 78.11 | 72.88 | 78.24 |
-| % Required True Labels |     0 |     7 |     1 |  8300 |
-| # Model Replacements   |     0 |     0 |   183 |     0 |
-| # AB Adaptations       |  5.68 | 45.45 | 11.36 | 100.0 |
-
-
+| % Required True Labels |  5.68 | 45.45 | 11.36 | 100.0 |
+| # Model Replacements   |     0 |     7 |     1 |  8300 |
+| # AB Adaptations       |     0 |     0 |   183 |     0 |
 
 ## Important changes
 
