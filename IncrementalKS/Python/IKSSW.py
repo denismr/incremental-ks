@@ -36,7 +36,7 @@ class IKSSW:
       n = len(self.values)
       return ks > ca * sqrt(2.0 * n / (n * n))
     else:
-      return self.iks.KS()
+      return self.iks.Test()
 
 if __name__ == "__main__":
   from random import random as rnd
