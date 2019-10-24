@@ -5,6 +5,7 @@ This repository contains supplemental material for the paper.
 Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-unsupervised-online-drift-detection-using-incremental-kolmogorov-smirn .
 
 **Important note:** IKS runs on the assumption that all the observations are unique. If it is not the case, the computed D statistic may not be exact (it can be higher than it should). This is reflected in the newest Python implementation of IKSSW (IKS Sliding Window). In this class, two windows are created. A reference window (that is immutable) and a sliding window (that is updatable and starts with the same observations as the reference window). The first computations of the KS statistics use the standard KS implementation, and only after the sliding window and reference window are not intersecting anymore (after the sliding window is updated enough times), it starts using the IKS fast computation. If the fast computation were used from the beginning, the first values would be (incorrectly) greater than the true KS statistic.
+
 **edit:** another possibility is, of course, disturbing the observations by adding a random amount. In that case, please, take note of the disturbed value, since it will be needed in order to remove the observation later on. A third option is to consider the observation a pair <observed value, random value>, where the second value is only used in case of ties of the first value (when comparing).
 
 
