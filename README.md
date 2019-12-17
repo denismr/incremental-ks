@@ -26,21 +26,12 @@ I updated the codebase. The most notable improvements are:
 | # Model Replacements   |     0 |     7 |     1 |  8300 |
 | # AB Adaptations       |     0 |     0 |   183 |     0 |
 
-## Important changes
-
-- Added support to Kuiper's Test
-- Fixed a bug where using non-unique observations could permanently damage the IKS
 
 ## Current Contents
 
 - Datasets that were used in the experiments
 - Incremental Kolmogorov-Smirnov implementation
   - Treap with lazy propagation implementation
-
-## TO DO List:
-
-- insert new plots and additional experimental results
-- upload code for all reported experiments
 
 ## F.A.Q.
 
