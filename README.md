@@ -19,7 +19,7 @@ I updated the codebase. The most notable improvements are:
 
 ## Performance Example
 
-Benchmark file is `testing_parallel_streams.py`. Look it up for more details. Im summary, two streams of 5000 values and two corresponding sliding windows of 500 values. I'm using the FFI version. The CPU where the code ran is an i7 4790.
+Benchmark file is `testing_parallel_streams.py`. Look it up for more details. In summary, two streams of 5000 values and two corresponding sliding windows of 500 values. I'm using the FFI version. The CPU where the code ran is an i7 4790.
 
 ```
 Elapsed time for IKS to process stream: 0.05 sec
