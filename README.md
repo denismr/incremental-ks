@@ -17,8 +17,19 @@ I updated the codebase. The most notable improvements are:
   1. use standard KS test while there is overlap between the sliding window and the reference window; 
   2. make all observations pairs where the second value is a randomized number to avoid ties (preferable).
 
+## Performance Example
 
-*Important note 2:* the version of Arabic that was used in the paper was utterly broken due to wrong preprocessing. This repository contains the fixed version. The corrects results are the following:
+Benchmark file is `testing_parallel_streams.py`. Look it up for more details. Im summary, two streams of 5000 values and two corresponding sliding windows of 500 values. I'm using the FFI version. The CPU where the code ran is an i7 4790.
+
+```
+Elapsed time for IKS to process stream: 0.05 sec
+Elapsed time for ks_2samp to process stream: 1.57 sec
+Maximum difference between IKS and ks_2samp: 1.1102230246251565e-16
+```
+
+## Paper-related Errata
+
+the version of Arabic that was used in the paper was utterly broken due to wrong preprocessing. This repository contains the fixed version. The corrects results are the following:
 
 | Measurament            | BL1   | MR    | AB    | TL    |
 | ---------------------- | ----- | ----- | ----- | ----- |
