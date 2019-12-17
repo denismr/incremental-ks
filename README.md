@@ -8,7 +8,7 @@ Paper download: http://www.kdd.org/kdd2016/papers/files/rpp0427-dos-reisA.pdf .
 I updated the codebase. The most notable improvements are:
   * Python code is finally properly documented;
   * All versions have methods to generate proper thresholds for the KS test, given any p-value. Finding the p-value given the KS statistic is easily achievable with a binary search in the interval `(0, 1)` using such new methods;
-  * Python code was splitted into two options: pure python (not recommended) and FFI (must compile the C++ wrapper as a dynamic library. I'll release the latest version for Windows and MacOS). Both versions have the same interface and can be swapped;
+  * Python code was splitted into two options: pure python (not recommended) and FFI (must compile the C++ wrapper as a dynamic library. I released binaries for Windows and MacOS). Both versions have the same interface and can be swapped;
   * All versions support values in the form of tuples containing a random value to resolve ties between observations. This is intented as an workaround for the important note below. `testing_single_stream_rnd_factor.py` exemplifies how to do this, in Python;
   * Incremental KS - Sliding Window (`IKSSW.py`) was completely rewritten (although it is interface-compatible with the previous version). The new version implements the strategy of coupling observations with random numbers for ties. This fact is transparent to the user.
 
