@@ -117,7 +117,7 @@ class IKS:
     Returns:
       Threshold the "ca" that can be used to compute a threshold for KS().
     '''
-    return clib.IKS_CAForPValue()
+    return clib.IKS_CAForPValue(pvalue)
 
 IKS.Add = IKS.AddObservation
 IKS.Remove = IKS.RemoveObservation
