@@ -13,7 +13,7 @@ I updated the codebase. The most notable improvements are:
   * Incremental KS - Sliding Window (`IKSSW.py`) was completely rewritten (although it is interface-compatible with the previous version). The new version implements the strategy of coupling observations with random numbers for ties. This fact is transparent to the user.
 
 
-**Important note:** IKS runs on the assumption that all the observations are unique. If it is not the case, the computed D statistic may not be exact (it can be higher than it should). Datasets with real numbers have mostly unique values. However, this assumption is always compromised when we have a reference window and a sliding window that starts with the same values as the reference window. Two possible workarounds for this setting:
+**Important note:** IKS runs on the assumption that all the observations are unique. If it is not the case, the computed KS statistic may not be exact (it can be higher than it should). Datasets with real numbers have mostly unique values. However, this assumption is always compromised when we have a reference window and a sliding window that starts with the same values as the reference window. Two possible workarounds for this setting:
   1. use standard KS test while there is overlap between the sliding window and the reference window; 
   2. make all observations pairs where the second value is a randomized number to avoid ties (preferable).
 
