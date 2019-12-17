@@ -2,7 +2,7 @@
 
 This repository contains supplemental material for the paper.
 
-Paper information and download: http://www.kdd.org/kdd2016/subtopic/view/fast-unsupervised-online-drift-detection-using-incremental-kolmogorov-smirn .
+Paper download: http://www.kdd.org/kdd2016/papers/files/rpp0427-dos-reisA.pdf .
 
 **Update (17/12/2019)**
 I updated the codebase. The most notable improvements are:
