@@ -45,8 +45,8 @@ IncrementalKS<URNG>::Test(double ca) {
 }
 
 template<class URNG> void
-IncrementalKS<URNG>::AddObservation(double _obs, SampleID sample) {
-  std::pair<double, double> obs = std::make_pair(_obs, sample == SampleA ? 0.0 : 1.0);
+IncrementalKS<URNG>::AddObservation(double _obs, SampleID sample, double rndFactor) {
+  std::tuple<double, double, double> obs = std::make_tuple(_obs, rndFactor, sample == SampleA ? 0.0 : 1.0);
   if (sample == SampleA) {
     count_a++;
   } else {
@@ -71,8 +71,8 @@ IncrementalKS<URNG>::AddObservation(double _obs, SampleID sample) {
 }
 
 template<class URNG> void
-IncrementalKS<URNG>::RemoveObservation(double _obs, SampleID sample) {
-  std::pair<double, double> obs = std::make_pair(_obs, sample == SampleA ? 0.0 : 1.0);
+IncrementalKS<URNG>::RemoveObservation(double _obs, SampleID sample, double rndFactor) {
+  std::tuple<double, double, double> obs = std::make_tuple(_obs, rndFactor, sample == SampleA ? 0.0 : 1.0);
   TreapPDDD *left, *right, *right_l;
   
   TreapPDDD::SplitKeepRight(treap, obs, &left, &right);
@@ -94,4 +94,16 @@ IncrementalKS<URNG>::RemoveObservation(double _obs, SampleID sample) {
   }
   
   treap = TreapPDDD::Merge(left, right);
+}
+
+template<class URNG> double
+IncrementalKS<URNG>::KSThresholdForPValue(double pvalue, int N) {
+  double _N = N;
+  double ca = std::sqrt(-0.5 * std::log(pvalue));
+  return ca * ((2.0 * _N) / (_N * _N));
+}
+
+template<class URNG> double
+IncrementalKS<URNG>::CAForPValue(double pvalue) {
+  return std::sqrt(-0.5 * std::log(pvalue));
 }
