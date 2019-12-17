@@ -10,11 +10,13 @@ class IKSSW:
       values: initial values for the reference and sliding windows.
     '''
     self.iks = IKS()
-    self.reference = [(x, random()) for x in values]
     self.sw = deque()
+    self.reference = [(x, random()) for x in values]
+
+    for val in self.reference:
+      self.iks.AddObservation(val, 1)
 
     for val in values:
-      self.iks.AddObservation((val, random()), 1)
       wrnd = (val, random())
       self.sw.append(wrnd)
       self.iks.AddObservation(wrnd, 2)
@@ -47,6 +49,19 @@ class IKSSW:
       The KS statistic D.
     '''
     return self.iks.KS()
+
+  def Update(self):
+    '''Updates the IKSSW. The reference window becomes the sliding window.
+    '''
+    for val in self.reference:
+      self.iks.Remove(val, 1)
+
+    self.reference.clear()
+    for x in self.sw:
+      self.reference.append((x[0], random()))
+
+    for val in self.reference:
+      self.iks.Add(val, 1)
   
   def Test(self, ca = 1.95):
     '''Test whether the reference and sliding window follow the different probability distributions according to KS Test.
@@ -65,4 +80,6 @@ if __name__ == "__main__":
   print(ikssw.KS(), ikssw.Kuiper(), ikssw.Test())
   for i in range(10):
     ikssw(random())
+  print(ikssw.KS(), ikssw.Kuiper(), ikssw.Test())
+  ikssw.Update()
   print(ikssw.KS(), ikssw.Kuiper(), ikssw.Test())
