@@ -37,7 +37,19 @@ extern "C" {
   void IKS_AddObservation(IKS_WrappedPointer pointer, double obs, int which_sample);
 
   __declspec(dllexport)
+  void IKS_AddCompositeObservation(IKS_WrappedPointer pointer, double obs, double obs_p2, int which_sample);
+
+  __declspec(dllexport)
   void IKS_RemoveObservation(IKS_WrappedPointer pointer, double obs, int which_sample);
+
+  __declspec(dllexport)
+  void IKS_RemoveCompositeObservation(IKS_WrappedPointer pointer, double obs, double obs_p2, int which_sample);
+
+  __declspec(dllexport)
+  double IKS_KSThresholdForPValue(double pvalue, int N);
+
+  __declspec(dllexport)
+  double IKS_CAForPValue(double pvalue);
 }
 
 #endif
