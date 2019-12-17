@@ -5,11 +5,12 @@ As a side-effect, this repository also provides implementations for Treap with L
 
 ## Current Supported Languages
 
-- [X] **Lua** (although the code is pure-Lua, Luajit is required to achieve reasonable performance)
+- [X] ***pure* Lua** (although the code is pure-Lua, Luajit is required to achieve reasonable performance)
+- [X] ***pure* Python** (should be avoided. Terrible performance)
 - [X] **C++**
+- [X] **C wrapper for C++** (ideal for FFI)
 - [X] **Lua** (FFI Version, backed by C++ Version)
 - [X] **Python** (FFI Version, backed by C++ Version)
-- [ ] **Java**
 
 ## TO DO List:
 
