@@ -60,7 +60,16 @@ function idx:Test(ca)
   -- ca = ca or 1.73 -- alpha = 0.005
   ca = ca or 1.95 -- alpha = 0.001
   local n = self.n[1]
-  return self:KS() > ca * math.sqrt(2 * n / n ^ 2), supremum
+  return self:KS() > ca * math.sqrt(2 * n / n ^ 2)
+end
+
+function idx:CAforPValue(pval)
+  return math.sqrt(-0.5 * math.log(pval))
+end
+
+function idx:KSThresholdForPValue(pval, N)
+  local ca = math.sqrt(-0.5 * math.log(pvalue))
+  return ca * (2.0 * N / N ^ 2)
 end
 
 local meta_key = {
