@@ -34,7 +34,7 @@ void IKS_DeleteIKS(IKS_WrappedPointer wp) {
 
 int IKS_Test(IKS_WrappedPointer wp, double ca) {
   auto * iks = reinterpret_cast<IncrementalKS<std::default_random_engine>*>(wp.pointer);
-  return iks->Test() ? 1 : 0;
+  return iks->Test(ca) ? 1 : 0;
 }
 
 double IKS_KS(IKS_WrappedPointer wp) {
